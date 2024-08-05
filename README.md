@@ -1,48 +1,103 @@
+FOODO: Restaurant Management System
 
-
-FOODO
-
-it is a full featured resturant mangment system for user feedback and mangment of menu and item catalog and services inside the resturant 
-
-
-
+FOODO is a comprehensive restaurant management system designed to streamline user feedback and efficiently manage the menu, item catalog, and services within a restaurant.
 Features
- the endpoint of the application that show information about the content at http://localhost:5000/catalog/JSON
 
-CRUD
-In this application we apply the CRUB operation add , update and delete 
+    Catalog Information: Access detailed information about the restaurant's menu and services via the JSON endpoint at http://localhost:5000/catalog/JSON.
+    CRUD Operations: Perform Create, Read, Update, and Delete operations on menu items and categories.
+    Authentication & Authorization: Secure user authentication and authorization using Facebook and Google.
 
-Authentication & Authorization
-This apps uses facebook and google  as authentication .
-authorization
+Getting Started
+Prerequisites
 
+Ensure you have the following software installed:
 
-How to run
+    Vagrant
+    VMware
+    Flask
+    Python
 
-requirements
-vagrant['http://www.vagrant.com'] 
-vmware['http://www.vmware.com']
-flask['http://www.flask.com']
-python ['http://www.python.com']
+Installation
 
-Run
+Follow these steps to set up and run the application:
 
-cd vagrant      
-vagrant up      
-vagrant ssh      
+    Clone the Repository
 
+    bash
+
+git clone https://github.com/hussienmohaemd/FOODO
+cd FOODO
+
+Start Vagrant
+
+bash
+
+cd vagrant
+vagrant up
+vagrant ssh
+
+Setup the Database
+
+bash
 
 cd /vagrant/catalog
-Setup database
 python database_setup.py
-lotsofmenus.py
+python lotsofmenus.py
 
+Run the Application
 
+bash
 
+    python project.py
 
-Now you can run the application:
-python project.py
- browser an type localhost:5000
- 
- 
-eng hussien ['https://www.facebook.com/hussein.hesham.399']
+    Access the Application
+
+    Open your web browser and navigate to http://localhost:5000.
+
+Project Structure
+
+    static/: Contains static files such as CSS, JavaScript, and images.
+    templates/: HTML templates for rendering web pages.
+    README.md: Project documentation.
+    app.py: Main application script.
+    database_setup.py: Script for setting up the database schema.
+    lotsofmenus.py: Script for populating the database with sample data.
+    project.py: Main script to run the project.
+
+Usage
+Endpoints
+
+    Catalog JSON: Retrieve the entire catalog in JSON format.
+
+    bash
+
+GET /catalog/JSON
+
+Category Courses JSON: Retrieve courses for a specific category in JSON format.
+
+bash
+
+    GET /categories/<int:category_id>/courses/JSON
+
+User Authentication
+
+    Login: Users can log in using their Facebook or Google accounts.
+    Register: New users can register for an account.
+    Logout: Users can log out from the application.
+
+CRUD Operations
+
+    Create: Add new categories and courses.
+    Read: View existing categories and courses.
+    Update: Edit existing categories and courses.
+    Delete: Remove categories and courses.
+
+Contact
+
+For any queries or feedback, feel free to reach out:
+
+    Eng. Hussien: Facebook
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
