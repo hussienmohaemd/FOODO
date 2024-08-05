@@ -1,103 +1,106 @@
-FOODO: Restaurant Management System
+# FOODO: Restaurant Management System
 
-FOODO is a comprehensive restaurant management system designed to streamline user feedback and efficiently manage the menu, item catalog, and services within a restaurant.
-Features
+**FOODO** is a comprehensive restaurant management system designed to streamline user feedback and efficiently manage the menu, item catalog, and services within a restaurant.
 
-    Catalog Information: Access detailed information about the restaurant's menu and services via the JSON endpoint at http://localhost:5000/catalog/JSON.
-    CRUD Operations: Perform Create, Read, Update, and Delete operations on menu items and categories.
-    Authentication & Authorization: Secure user authentication and authorization using Facebook and Google.
+## Features
 
-Getting Started
-Prerequisites
+- **Catalog Information**: Access detailed information about the restaurant's menu and services via the JSON endpoint at [http://localhost:5000/catalog/JSON](http://localhost:5000/catalog/JSON).
+- **CRUD Operations**: Perform Create, Read, Update, and Delete operations on menu items and categories.
+- **Authentication & Authorization**: Secure user authentication and authorization using Facebook and Google.
+
+## Getting Started
+
+### Prerequisites
 
 Ensure you have the following software installed:
 
-    Vagrant
-    VMware
-    Flask
-    Python
+- **Vagrant**
+- **VMware**
+- **Flask**
+- **Python**
 
-Installation
+### Installation
 
 Follow these steps to set up and run the application:
 
-    Clone the Repository
+1. **Clone the Repository**
 
-    bash
+    ```bash
+    git clone https://github.com/hussienmohaemd/FOODO
+    cd FOODO
+    ```
 
-git clone https://github.com/hussienmohaemd/FOODO
-cd FOODO
+2. **Start Vagrant**
 
-Start Vagrant
+    ```bash
+    cd vagrant
+    vagrant up
+    vagrant ssh
+    ```
 
-bash
+3. **Setup the Database**
 
-cd vagrant
-vagrant up
-vagrant ssh
+    ```bash
+    cd /vagrant/catalog
+    python database_setup.py
+    python lotsofmenus.py
+    ```
 
-Setup the Database
+4. **Run the Application**
 
-bash
-
-cd /vagrant/catalog
-python database_setup.py
-python lotsofmenus.py
-
-Run the Application
-
-bash
-
+    ```bash
     python project.py
+    ```
 
-    Access the Application
+5. **Access the Application**
 
-    Open your web browser and navigate to http://localhost:5000.
+    Open your web browser and navigate to [http://localhost:5000](http://localhost:5000).
 
-Project Structure
+## Project Structure
 
-    static/: Contains static files such as CSS, JavaScript, and images.
-    templates/: HTML templates for rendering web pages.
-    README.md: Project documentation.
-    app.py: Main application script.
-    database_setup.py: Script for setting up the database schema.
-    lotsofmenus.py: Script for populating the database with sample data.
-    project.py: Main script to run the project.
+- **static/**: Contains static files such as CSS, JavaScript, and images.
+- **templates/**: HTML templates for rendering web pages.
+- **README.md**: Project documentation.
+- **app.py**: Main application script.
+- **database_setup.py**: Script for setting up the database schema.
+- **lotsofmenus.py**: Script for populating the database with sample data.
+- **project.py**: Main script to run the project.
 
-Usage
-Endpoints
+## Usage
 
-    Catalog JSON: Retrieve the entire catalog in JSON format.
+### Endpoints
 
-    bash
+- **Catalog JSON**: Retrieve the entire catalog in JSON format.
 
-GET /catalog/JSON
+    ```bash
+    GET /catalog/JSON
+    ```
 
-Category Courses JSON: Retrieve courses for a specific category in JSON format.
+- **Category Courses JSON**: Retrieve courses for a specific category in JSON format.
 
-bash
-
+    ```bash
     GET /categories/<int:category_id>/courses/JSON
+    ```
 
-User Authentication
+### User Authentication
 
-    Login: Users can log in using their Facebook or Google accounts.
-    Register: New users can register for an account.
-    Logout: Users can log out from the application.
+- **Login**: Users can log in using their Facebook or Google accounts.
+- **Register**: New users can register for an account.
+- **Logout**: Users can log out from the application.
 
-CRUD Operations
+### CRUD Operations
 
-    Create: Add new categories and courses.
-    Read: View existing categories and courses.
-    Update: Edit existing categories and courses.
-    Delete: Remove categories and courses.
+- **Create**: Add new categories and courses.
+- **Read**: View existing categories and courses.
+- **Update**: Edit existing categories and courses.
+- **Delete**: Remove categories and courses.
 
-Contact
+## Contact
 
 For any queries or feedback, feel free to reach out:
 
-    Eng. Hussien: Facebook
+- **Eng. Hussien**: [Facebook](https://facebook.com)
 
-License
+## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
